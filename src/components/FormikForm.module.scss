@@ -1,0 +1,121 @@
+.form {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "fullname email"
+    "phone ."
+    "message message"
+    "checkbox checkbox"
+    "submit submit";
+  gap: 3rem;
+  background-color: #f2fcf8;
+  padding: 2rem;
+
+  &__text {
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #f96c54;
+  }
+
+  &__subheading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+    margin-bottom: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #a3cbbb;
+    background-color: transparent;
+    font-family: "Rubik", sans-serif;
+
+    &::placeholder {
+      color: #a3cbbb;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+  }
+
+  &__error {
+    color: #f96c54;
+    line-height: 1.5;
+  }
+
+  &__fullname {
+    grid-area: fullname;
+  }
+
+  &__email {
+    grid-area: email;
+  }
+
+  &__phone {
+    grid-area: phone;
+  }
+
+  &__message {
+    grid-area: message;
+  }
+
+  &__checkbox {
+    grid-area: checkbox;
+    color: #a3cbbb;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__checkboxfield {
+    appearance: none;
+    color: #a3cbbb;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid #a3cbbb;
+    border-radius: 0.15em;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+
+    &::before {
+      content: "\2714";
+      color: #a3cbbb;
+      font-size: 0.75em;
+      line-height: 1;
+      display: none;
+    }
+
+    &:checked::before {
+      display: block;
+    }
+  }
+
+  &__submit {
+    grid-area: submit;
+    background-color: #f96c54;
+    color: white;
+    padding: 1rem 2rem;
+    width: max-content;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in-out;
+    margin: 0 auto;
+    border-radius: 2rem;
+
+    &:hover {
+      background-color: #f45539;
+    }
+  }
+}
